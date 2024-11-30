@@ -1,0 +1,106 @@
+/* Estilos globais utilizando variáveis CSS */
+:root {
+    --background-color: #F4F4F4; /* Cor de fundo geral */
+    --primary-color: #17580E; /* Cor principal (verde) */
+    --secondary-color: #9EE051; /* Cor secundária (verde claro) */
+    --terciary-color: #F92A25; /* Cor terciária (vermelho) */
+    --fourth-color: #207B14; /* Cor de destaque (verde escuro) */
+    --button-hover: #BA160C; /* Cor de hover dos botões */
+    --text-color: #333; /* Cor do texto */
+    --font-family: 'Trebuchet MS', sans-serif; /* Fonte padrão */
+}
+
+/* Estilos para o corpo da página */
+body {
+    font-family: var(--font-family); /* Aplica a fonte padrão */
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(234, 234, 234, 1), rgba(255, 255, 255, 1)); /* Fundo com gradiente */
+}
+
+/* Cabeçalho (barra superior) */
+header {
+    background-color: var(--primary-color); /* Cor de fundo do cabeçalho */
+    padding: 30px; /* Espaçamento interno */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+header h2 {
+    font-size: 1.8em; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem */
+}
+
+/* Seção de sugestões (onde as sugestões serão listadas) */
+.admin-section {
+    padding: 40px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.admin-section h2 {
+    font-size: 2.5em; /* Tamanho da fonte do título */
+    color: var(--secondary-color); /* Cor do título */
+}
+
+.admin-section p {
+    font-size: 1.2em; /* Tamanho da fonte do parágrafo */
+    color: var(--text-color); /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para a tabela de sugestões */
+#sugestoes {
+    width: 100%; /* A tabela ocupa toda a largura disponível */
+    max-width: 1000px; /* Tamanho máximo da tabela */
+    margin: 0 auto; /* Centraliza a tabela */
+    border-collapse: collapse; /* Remove o espaçamento entre as células */
+    background-color: white; /* Cor de fundo da tabela */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+}
+
+/* Estilo das células da tabela */
+#sugestoes th, #sugestoes td {
+    padding: 12px 20px; /* Espaçamento interno das células */
+    border: 1px solid #ddd; /* Borda leve para as células */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Estilo para os cabeçalhos das colunas */
+#sugestoes th {
+    background-color: var(--fourth-color); /* Cor de fundo dos cabeçalhos */
+    color: white; /* Cor do texto dos cabeçalhos */
+}
+
+/* Estilo para as células da tabela */
+#sugestoes td {
+    color: var(--text-color); /* Cor do texto nas células */
+}
+
+/* Efeito de hover nas linhas da tabela */
+#sugestoes tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo quando o mouse passa por cima */
+}
+
+/* Estilos para os botões dentro da tabela */
+#sugestoes button {
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    margin: 0; /* Remove a margem */
+    background-color: var(--terciary-color); /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho da fonte */
+    cursor: pointer; /* Indica que o botão é clicável */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo ao passar o mouse */
+}
+
+/* Estilo do botão quando o mouse passa por cima */
+#sugestoes button:hover {
+    background-color: var(--button-hover); /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilo do botão quando está em foco (ao ser clicado ou acessado via teclado) */
+#sugestoes button:focus {
+    outline: none; /* Remove a borda padrão de foco */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Adiciona uma borda azul suave para indicar foco */
+}

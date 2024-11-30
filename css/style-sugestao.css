@@ -1,0 +1,163 @@
+/* Definindo as variáveis de cores e fontes */
+:root {
+    --background-color: #F4F4F4; /* Cor de fundo da página */
+    --primary-color: #17580E; /* Cor principal (verde) */
+    --secondary-color: #9EE051; /* Cor secundária (verde claro) */
+    --button-hover: #207B14; /* Cor de hover dos botões (verde claro) */
+    --text-color: #333; /* Cor do texto (cinza escuro) */
+    --font-family: 'Trebuchet MS', sans-serif; /* Fonte padrão */
+}
+
+/* Estilos para o corpo da página */
+body {
+    font-family: var(--font-family); /* Aplica a fonte definida */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(244, 244, 244, 1)); /* Fundo com gradiente */
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: var(--primary-color); /* Cor de fundo do cabeçalho */
+    height: 40px; /* Define altura fixa */
+    line-height: 40px; /* Alinha texto verticalmente */
+    position: relative; /* Permite posicionamento relativo em elementos internos */
+    color: white;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+nav {
+    display: flex; /* Usa o flexbox para distribuir itens */
+    justify-content: space-between; /* Espaço igual entre os itens */
+    align-items: center; /* Centraliza verticalmente */
+    width: 90%; /* Define a largura */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Título dentro do cabeçalho */
+header h2 {
+    font-size: 1.8em; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem */
+}
+
+header h1 {
+    font-size: 1.5em; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem */
+}
+
+/* Estilos para a navegação */
+nav ul {
+    list-style: none; /* Remove os marcadores */
+    margin: 0;
+    display: flex; /* Alinha os itens em linha */
+    justify-content: center; /* Centraliza os itens */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+nav ul li {
+    display: inline-block; /* Exibe como bloco inline */
+}
+
+/* Estilo dos links de navegação */
+nav ul li a {
+    color: white; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1.2em; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+}
+
+/* Efeito de hover nos links */
+nav ul li a:hover {
+    text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+/* Estilos para a seção de sugestão de ponto */
+.sugestao-ponto {
+    padding: 40px 20px;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Título da seção */
+.sugestao-ponto h2 {
+    font-size: 2.5em; /* Tamanho maior para o título */
+    color: var(--secondary-color); /* Cor do título */
+}
+
+/* Parágrafo de descrição */
+.sugestao-ponto p {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 20px; /* Espaço abaixo */
+}
+
+/* Estilo geral do formulário */
+.sugestao-ponto form {
+    max-width: 700px; /* Largura máxima do formulário */
+    margin: auto; /* Centraliza o formulário */
+    background-color: white; /* Cor de fundo branca */
+    padding: 50px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo dos rótulos dos campos do formulário */
+.sugestao-ponto label {
+    display: block; /* Faz os rótulos ficarem em linha com os campos */
+    font-weight: 600; /* Negrito */
+    margin: 18px 0; /* Espaçamento acima e abaixo */
+    color: var(--text-color); /* Cor do texto */
+}
+
+/* Estilo dos campos de entrada de texto */
+.sugestao-ponto input {
+    width: 100%; /* Largura completa */
+    padding: 15px 0;
+    margin: 0;
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho da fonte */
+}
+
+/* Estilo da área de texto (textarea) */
+.sugestao-ponto textarea {
+    width: 100%; /* Largura completa */
+    margin: 0;
+    padding: 15px 0; /* Corrigido para um valor mais razoável */
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1.2em; /* Tamanho da fonte */
+}
+
+/* Estilo do texto de placeholder */
+.sugestao-ponto ::placeholder {
+    margin: 0;
+    padding: 0 20px;
+    color: #888; /* Cor do texto placeholder */
+    font-style: italic; /* Estilo em itálico */
+}
+
+/* Estilo do botão de envio */
+.sugestao-ponto button {
+    padding: 10px 10px;
+    margin: 20px 0;
+    background-color: var(--primary-color); /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1em;
+    cursor: pointer; /* Muda o cursor para indicar clique */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito de hover no botão */
+.sugestao-ponto button:hover {
+    background-color: var(--button-hover); /* Muda a cor de fundo no hover */
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: var(--primary-color); /* Cor de fundo do rodapé */
+    color: white;
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Espaçamento */
+}

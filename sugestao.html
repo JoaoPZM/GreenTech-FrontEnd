@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerir Novo Ponto</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style-sugestao.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <!-- Logo do site -->
+            <div class="logo">
+                <h1>GreenTech</h1> <!-- Alterado para h1 por semântica -->
+            </div>
+            
+            <!-- Links do menu de navegação -->
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cartilha.html">Cartilha</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Seção de sugestão de pontos -->
+        <section class="sugestao-ponto">
+            <h2>Sugerir Novo Ponto</h2>
+            <p>Preencha as informações abaixo para sugerir um novo ponto de coleta de lixo eletrônico:</p>
+
+            <!-- Formulário -->
+            <form id="form-sugestao">
+                <!-- Campo Nome -->
+                <label for="nome-ponto">Nome do Ponto</label>
+                <input type="text" id="nome-ponto" name="nome" required placeholder="Ex.: UFSM Campus Cachoeira">
+
+                <!-- Campo Bairro -->
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro" required placeholder="Ex.: Centro">
+
+                <!-- Campo Rua -->
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" name="rua" required placeholder="Ex.: Rua Principal, nº 123">
+
+                <!-- Campo Observação -->
+                <label for="observacao">Observação (opcional)</label>
+                <textarea id="observacao" name="observacao" placeholder="Ex.: Ponto próximo ao estacionamento"></textarea>
+
+                <!-- Botão de Envio -->
+                <button type="submit" class="btn" aria-label="Enviar sugestão de novo ponto">Enviar Sugestão</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <p>&copy; 2024 GreenTech. Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:greentechufsm@gmail.com">greentechufsm@gmail.com</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script-sugestao.js"></script>
+</body>
+</html>

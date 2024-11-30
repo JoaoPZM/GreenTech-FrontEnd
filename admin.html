@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - GreenTech</title>
+    <link rel="stylesheet" href="css/style-admin.css"> <!-- Link para o arquivo de estilos CSS -->
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>Administração</h2> <!-- Título do painel -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção de sugestões -->
+    <section class="admin-section">
+        <h2>Sugestões de Novos Pontos</h2>
+        <!-- Tabela para exibir as sugestões -->
+        <table id="sugestoes">
+            <thead>
+                <tr>
+                    <th>Nome do Ponto</th>
+                    <th>Bairro</th>
+                    <th>Rua</th>
+                    <th>Observação</th>
+                    <th>Descartar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As sugestões serão inseridas aqui via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+<script>
+    // Função para carregar sugestões do backend
+    fetch('http://localhost:3000/api/sugestoes')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Falha na comunicação com o servidor');
+            }
+            return response.json(); // Converte a resposta em JSON
+        })
+        .then(data => {
+            const tbody = document.querySelector('#sugestoes tbody');
+            data.forEach(sugestao => {
+                const tr = document.createElement('tr');
+                tr.setAttribute('data-id', sugestao._id);  // Adicionando o ID na linha da tabela
+                tr.innerHTML = `
+                    <td>${sugestao.nome}</td>
+                    <td>${sugestao.bairro}</td>
+                    <td>${sugestao.rua}</td>
+                    <td>${sugestao.observacao || 'Nenhuma observação'}</td>
+                    <td>
+                        <button class="btn" onclick="deletarSugestao('${sugestao._id}')">Deletar</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao carregar sugestões:', error);
+            alert('Não foi possível carregar as sugestões. Tente novamente mais tarde.');
+        });
+
+    // Função para deletar uma sugestão
+    function deletarSugestao(id) {
+        if (confirm('Você tem certeza que deseja deletar essa sugestão?')) {
+            // Enviar pedido de deleção para o backend
+            fetch(`http://localhost:3000/api/sugestoes/${id}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao deletar a sugestão');
+                }
+                return response.json(); // Converte a resposta em JSON
+            })
+            .then(data => {
+                alert(data.message);
+                // Remover a linha da tabela
+                const row = document.querySelector(`#sugestoes tr[data-id="${id}"]`);
+                row.remove();
+            })
+            .catch(error => {
+                alert('Erro ao deletar sugestão');
+                console.log(error);
+            });
+        }
+    }
+</script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
