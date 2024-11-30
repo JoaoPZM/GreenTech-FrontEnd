@@ -6,10 +6,11 @@ document.getElementById('form-sugestao').addEventListener('submit', function(eve
     const nome = document.getElementById('nome-ponto').value;
     const bairro = document.getElementById('bairro').value;
     const rua = document.getElementById('rua').value;
+    const residuo = document.getElementById('residuo').value;
     const observacao = document.getElementById('observacao').value;
 
     // Validação básica para garantir que todos os campos obrigatórios estão preenchidos
-    if (!nome || !bairro || !rua) {
+    if (!nome || !bairro || !rua || !residuo) {
         alert("Por favor, preencha todos os campos obrigatórios!");
         return; // Interrompe a execução caso algum campo obrigatório esteja vazio
     }
@@ -29,6 +30,7 @@ document.getElementById('form-sugestao').addEventListener('submit', function(eve
             nome: nome,            // Envia o nome do ponto
             bairro: bairro,        // Envia o bairro
             rua: rua,              // Envia a rua
+            residuo: residuo,      // Envia o residuo
             observacao: observacao // Envia a observação, que pode estar vazia
         })
     })
