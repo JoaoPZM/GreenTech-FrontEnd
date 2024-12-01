@@ -71,6 +71,7 @@ ul.menu li a {
 ul.menu li a:hover {
     /* Efeito ao passar o mouse nos links */
     text-decoration: underline; /* Sublinhado ao passar o mouse */
+    color: var(--secondary-color);
 }
 
 /* Estilo específico para a seção do mapa */
