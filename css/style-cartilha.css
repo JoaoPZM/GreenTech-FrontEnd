@@ -20,10 +20,15 @@ body {
 
 /* Cabeçalho do site */
 header {
-    background-color: var(--primary-color); /* Fundo do cabeçalho */
+    position: relative; /* Fixa o cabeçalho no topo da página */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1100; /* Fica acima da aba lateral */
+    background-color: var(--primary-color); /* Fundo para cobrir a aba */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Sombra para destaque */
     height: 2.5rem; /* Altura proporcional ao texto */
     line-height: 2.5rem; /* Alinha texto verticalmente */
-    position: relative; /* Necessário para posicionamento relativo */
 }
 
 /* Navegação */
@@ -48,13 +53,13 @@ ul.menu {
     margin: 0;
     padding: 0;
     display: flex; /* Exibe os itens do menu em linha */
-    gap: 1.25rem; /* Espaçamento entre itens */
 }
 
 ul.menu li a {
     color: white;
     text-decoration: none;
     font-size: clamp(1rem, 1.5vw, 1.2rem); /* Usa clamp para tamanho responsivo */
+    margin-left: 1rem; /* Espaçamento entre itens */
 }
 
 ul.menu li a:hover {
@@ -143,19 +148,26 @@ ul.menu li a:hover {
 
 /* Rodapé */
 footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: clamp(1rem, 2vw, 2rem);
+    /* Estilização do rodapé */
+    background-color: var(--primary-color); /* Fundo na cor principal */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 1.5rem 0; /* Espaçamento interno */
+    font-size: 0.9rem; /* Tamanho de fonte responsivo */
+    position: relative; /* Posição relativa para ajustes */
+    bottom: 0; /* Fixa ao final, se necessário */
+    width: 100%; /* Ocupa toda a largura */
 }
 
 footer p {
-    margin: 0.25rem 0;
+    /* Parágrafos no rodapé */
+    margin: 0.25rem 0; /* Margem vertical pequena */
 }
 
 footer a {
-    color: white;
-    text-decoration: underline;
+    /* Links no rodapé */
+    color: white; /* Texto branco */
+    text-decoration: underline; /* Sublinhado */
 }
 
 /* Ajustes específicos para telas pequenas */
@@ -186,7 +198,5 @@ footer a {
     .cartilha-intro p {
         font-size: 1.2rem;
         max-width: 80%;
-        margin: 0 auto;
-        line-height: 1.6;
     }
 }
