@@ -116,7 +116,7 @@ pontosDeColeta.forEach((ponto, index) => {
     link.href = "#";
     link.addEventListener('click', () => {
         // Centraliza o mapa e abre o popup
-        map.setView(ponto.coordenadas, 25); 
+        map.setView(ponto.coordenadas, 20); 
         const marcador = L.marker(ponto.coordenadas)
             .bindPopup(criarPopup(
                 ponto.nome,
@@ -129,4 +129,23 @@ pontosDeColeta.forEach((ponto, index) => {
     });
     item.appendChild(link);
     listaPontos.appendChild(item);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sidebar = document.querySelector(".sidebar");
+    const map = document.getElementById("map");
+    const sidebarToggle = document.querySelector(".sidebar-toggle");
+
+    // Alterna a visibilidade da barra lateral ao clicar no botão
+    sidebarToggle.addEventListener("click", function() {
+        const isSidebarOpen = sidebar.style.right === "0px";
+
+        if (isSidebarOpen) {
+            sidebar.style.right = "-25rem"; // Esconde a barra lateral
+            sidebarToggle.classList.remove("open");
+        } else {
+            sidebar.style.right = "0"; // Exibe a barra lateral
+            sidebarToggle.classList.add("open");
+        }
+    });
 });
