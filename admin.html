@@ -50,6 +50,34 @@
         </table>
     </section>
 
+<script>
+// Função para deletar uma sugestão
+function deletarSugestao(id) {
+        if (confirm('Você tem certeza que deseja deletar essa sugestão?')) {
+            // Enviar pedido de deleção para o backend
+            fetch(`http://localhost:3000/api/sugestoes/${id}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao deletar a sugestão');
+                }
+                return response.json(); // Converte a resposta em JSON
+            })
+            .then(data => {
+                alert(data.message);
+                // Remover a linha da tabela
+                const row = document.querySelector(`#sugestoes tr[data-id="${id}"]`);
+                row.remove();
+            })
+            .catch(error => {
+                alert('Erro ao deletar sugestão');
+                console.log(error);
+            });
+        }
+    }
+</script>
+
     <script src="js/script-admin.js"></script>
 </body>
 </html>
