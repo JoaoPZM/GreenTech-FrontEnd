@@ -5,6 +5,7 @@
     --terciary-color: #207B14; /* Cor terciária (verde) */
     --background-color: #f4f4f4; /* Cor de fundo padrão */
     --text-color: #333; /* Cor do texto padrão */
+    --base-font-size: 16px; /* Base do tamanho de fonte */
 }
 
 /* Estilo básico do corpo da página */
@@ -14,30 +15,31 @@ body {
     color: var(--text-color); /* Cor do texto */
     margin: 0;
     padding: 0;
+    font-size: 1rem; /* Usa base de 16px */
 }
 
 /* Cabeçalho do site */
 header {
     background-color: var(--primary-color); /* Fundo do cabeçalho */
-    height: 40px; /* Define altura fixa */
-    line-height: 40px; /* Alinha texto verticalmente */
-    position: relative; /* Necessário para posicionamento de elementos relativos, como o menu lateral */
+    height: 2.5rem; /* Altura proporcional ao texto */
+    line-height: 2.5rem; /* Alinha texto verticalmente */
+    position: relative; /* Necessário para posicionamento relativo */
 }
 
 /* Navegação */
 nav {
-    display: flex; /* Organiza o conteúdo em linha */
+    display: flex;
     justify-content: space-between; /* Espaça os elementos (logo e menu) */
-    align-items: center; /* Alinha verticalmente ao centro */
-    width: 90%; /* Largura do conteúdo do nav */
-    margin: 0 auto; /* Centraliza o nav horizontalmente */
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /* Logo do site */
 .logo h2 {
     color: white;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 2vw, 2rem); /* Usa clamp para dimensionar dinamicamente */
 }
 
 /* Menu principal */
@@ -46,100 +48,97 @@ ul.menu {
     margin: 0;
     padding: 0;
     display: flex; /* Exibe os itens do menu em linha */
-}
-
-ul.menu li {
-    margin-left: 20px; /* Espaçamento entre os itens */
+    gap: 1.25rem; /* Espaçamento entre itens */
 }
 
 ul.menu li a {
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado dos links */
-    font-size: 1.2rem; /* Define o tamanho da fonte */
+    color: white;
+    text-decoration: none;
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Usa clamp para tamanho responsivo */
 }
 
 ul.menu li a:hover {
-    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+    text-decoration: underline;
 }
 
 /* Botão de download da cartilha */
 .cartilha-download {
-    text-align: center; /* Centraliza o botão */
-    margin: 30px 0; /* Espaçamento acima e abaixo */
+    text-align: center;
+    margin: 2rem 0;
 }
 
 .btn-download {
-    display: inline-block; /* Torna o botão clicável como um bloco */
-    padding: 12px 25px; /* Espaçamento interno */
-    background-color: var(--primary-color); /* Cor de fundo */
-    color: #fff; /* Cor do texto */
-    font-size: 1.2em; /* Tamanho da fonte */
-    font-weight: 600; /* Negrito */
-    border-radius: 8px; /* Bordas arredondadas */
-    text-decoration: none; /* Remove sublinhado */
-    margin-top: 30px;
-    transition: background-color 0.3s; /* Animação suave na mudança de cor */
+    display: inline-block;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    background-color: var(--primary-color);
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
 }
 
 .btn-download:hover {
-    background-color: var(--terciary-color); /* Altera a cor ao passar o mouse */
+    background-color: var(--terciary-color);
 }
 
 /* Seção de introdução da cartilha */
 .cartilha-intro {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(244, 244, 244, 1)); /* Fundo com gradiente */
+    padding: clamp(2rem, 5vw, 4rem) 5%;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(244, 244, 244, 1));
     color: var(--text-color);
 }
 
 .cartilha-intro h1 {
-    font-size: 2.5em; /* Tamanho do título */
-    color: var(--primary-color); /* Cor do título */
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .cartilha-intro p {
-    font-size: 1.2em; /* Tamanho do texto */
-    max-width: 800px; /* Largura máxima do texto */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    line-height: 1.6; /* Espaçamento entre linhas */
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    max-width: 50%;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Seção dos cartões de conteúdo */
 .cartilha-conteudo {
-    display: flex; /* Exibe os cartões lado a lado */
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
-    justify-content: center; /* Centraliza os cartões */
-    gap: 20px; /* Espaçamento entre os cartões */
-    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: clamp(2rem, 5vw, 4rem);
     background-color: var(--background-color);
 }
 
 .card {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor */
-    width: 300px; /* Largura fixa */
-    padding: 20px;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    width: clamp(80%, 30%, 25rem);
+    padding: 1.25rem;
     text-align: center;
-    transition: transform 0.3s; /* Animação ao passar o mouse */
+    transition: transform 0.3s;
 }
 
 .card h2 {
-    font-size: 1.8em;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .card p {
-    font-size: 1em;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.5;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Aumenta o cartão ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Rodapé */
@@ -147,14 +146,47 @@ footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: clamp(1rem, 2vw, 2rem);
 }
 
 footer p {
-    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    margin: 0.25rem 0;
 }
 
 footer a {
     color: white;
-    text-decoration: underline; /* Sublinha os links no rodapé */
+    text-decoration: underline;
+}
+
+/* Ajustes específicos para telas pequenas */
+@media (max-width: 576px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .logo h2 {
+        font-size: 0.8rem; /* Reduz tamanho da fonte */
+    }
+
+    ul.menu {
+        flex-direction: row; /* Mantém o menu horizontal */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    ul.menu li a {
+        font-size: 0.8rem; /* Reduz tamanho da fonte */
+    }
+
+    .cartilha-intro p {
+        font-size: 1.2rem;
+        max-width: 80%;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
 }
