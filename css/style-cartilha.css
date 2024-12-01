@@ -31,7 +31,6 @@ header {
     height: 2.5rem; /* Altura proporcional ao texto */
     line-height: 2.5rem; /* Alinha texto verticalmente */
     box-sizing: border-box; /* Inclui padding e bordas no cálculo de largura */
-
 }
 
 /* Navegação */
@@ -68,6 +67,7 @@ ul.menu li a {
 
 ul.menu li a:hover {
     text-decoration: underline;
+    color: var(--secondary-color);
 }
 
 /* Botão de download da cartilha */
