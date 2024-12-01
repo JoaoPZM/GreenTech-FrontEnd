@@ -12,139 +12,186 @@
 
 /* Estilos para o corpo da página */
 body {
-    font-family: var(--font-family); /* Aplica a fonte padrão */
-    margin: 0; /* Remove margem padrão */
-    padding: 0; /* Remove padding padrão */
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(234, 234, 234, 1), rgba(255, 255, 255, 1)); /* Fundo com gradiente */
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        rgba(255, 255, 255, 1), 
+        rgba(234, 234, 234, 1), 
+        rgba(255, 255, 255, 1)
+    );
 }
 
 /* Cabeçalho (barra superior) */
 header {
-    background-color: var(--primary-color); /* Cor de fundo do cabeçalho */
-    padding: 30px; /* Espaçamento interno */
-    color: white; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
+    background-color: var(--primary-color);
+    padding: clamp(1rem, 3%, 2rem); /* Espaçamento interno responsivo */
+    color: white;
+    text-align: center;
 }
 
 header h2 {
-    font-size: 1.8em; /* Tamanho da fonte */
-    margin: 0; /* Remove a margem */
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Fonte adaptável */
+    margin: 0;
 }
 
 /* Seção de sugestões (onde as sugestões serão listadas) */
 .admin-section {
-    padding: 40px 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o conteúdo */
+    padding: 5% 2%;
+    text-align: center;
 }
 
 .admin-section h2 {
-    font-size: 2.5em; /* Tamanho da fonte do título */
-    color: var(--secondary-color); /* Cor do título */
+    font-size: clamp(2rem, 4vw, 2.5rem); /* Título adaptável */
+    color: var(--secondary-color);
 }
 
 .admin-section p {
-    font-size: 1.2em; /* Tamanho da fonte do parágrafo */
-    color: var(--text-color); /* Cor do texto */
-    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Parágrafo adaptável */
+    color: var(--text-color);
+    margin-bottom: 5%; /* Espaçamento responsivo */
 }
 
 /* Estilo para a tabela de sugestões */
 #sugestoes {
-    width: 100%; /* A tabela ocupa toda a largura disponível */
-    max-width: 1000px; /* Tamanho máximo da tabela */
-    margin: 0 auto; /* Centraliza a tabela */
-    border-collapse: collapse; /* Remove o espaçamento entre as células */
-    background-color: white; /* Cor de fundo da tabela */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+    width: 100%;
+    max-width: 90%; /* Responsividade */
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo das células da tabela */
 #sugestoes th, #sugestoes td {
-    padding: 12px 20px; /* Espaçamento interno das células */
-    border: 1px solid #ddd; /* Borda leve para as células */
-    text-align: left; /* Alinha o texto à esquerda */
+    padding: clamp(0.8rem, 2%, 1.2rem); /* Adaptável ao tamanho da célula */
+    border: 0.0625rem solid #ddd;
+    text-align: left;
 }
 
-/* Estilo para os cabeçalhos das colunas */
 #sugestoes th {
-    background-color: var(--fourth-color); /* Cor de fundo dos cabeçalhos */
-    color: white; /* Cor do texto dos cabeçalhos */
+    background-color: var(--fourth-color);
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
-/* Estilo para as células da tabela */
 #sugestoes td {
-    color: var(--text-color); /* Cor do texto nas células */
+    color: var(--text-color);
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Efeito de hover nas linhas da tabela */
 #sugestoes tr:hover {
-    background-color: #f1f1f1; /* Cor de fundo quando o mouse passa por cima */
+    background-color: #f1f1f1;
 }
 
 /* Estilos para os botões dentro da tabela */
 #sugestoes button {
-    padding: 10px 15px; /* Espaçamento interno do botão */
-    margin: 0; /* Remove a margem */
-    background-color: var(--terciary-color); /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border: none; /* Remove a borda padrão do botão */
-    border-radius: 8px; /* Bordas arredondadas */
-    font-size: 1em; /* Tamanho da fonte */
-    cursor: pointer; /* Indica que o botão é clicável */
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo ao passar o mouse */
+    padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 2vw, 1.2rem);
+    background-color: var(--terciary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Estilo do botão quando o mouse passa por cima */
 #sugestoes button:hover {
-    background-color: var(--button-hover); /* Cor de fundo do botão ao passar o mouse */
+    background-color: var(--button-hover);
 }
 
-/* Estilo do botão quando está em foco (ao ser clicado ou acessado via teclado) */
 #sugestoes button:focus {
-    outline: none; /* Remove a borda padrão de foco */
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Adiciona uma borda azul suave para indicar foco */
+    outline: none;
+    box-shadow: 0 0 0 0.125rem rgba(0, 123, 255, 0.5);
 }
 
 /* Estilos para o modal de login */
 .modal {
-    display: none; /* Escondido por padrão */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+    display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease; /* Transição suave do fundo */
 }
 
+/* Estilos do conteúdo do modal */
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradiente suave para o fundo */
+    padding: clamp(1rem, 4%, 2rem); /* Espaçamento interno adaptável */
+    border-radius: 1rem; /* Bordas arredondadas mais suaves */
+    width: clamp(18rem, 50%, 25rem); /* Largura adaptável */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Sombra suave para destacar */
+    border: 1px solid #ddd; /* Borda leve */
+    animation: slide-up 0.4s ease-out; /* Animação de entrada */
 }
 
+/* Título do modal */
+.modal-content h2 {
+    color: var(--primary-color); /* Cor do título do modal */
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Tamanho da fonte adaptável */
+    margin-bottom: 1.5rem;
+    font-weight: 400; /* Peso maior para o título */
+}
+
+/* Estilo dos campos de entrada */
 .modal-content input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 90%;
+    margin: 0.8rem 0; /* Margem superior e inferior */
+    padding: 0.5rem; /* Preenchimento confortável */
+    border: 0.1rem solid #ddd; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    font-size: 1rem;
+    color: var(--text-color); /* Cor do texto */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
 }
 
+/* Efeito de foco nos campos de entrada */
+.modal-content input:focus {
+    outline: none;
+    border-color: var(--secondary-color); /* Cor de foco */
+    box-shadow: 0 0 0 2px rgba(30, 140, 50, 0.2); /* Efeito de destaque suave */
+}
+
+/* Estilo do botão */
 .modal-content button {
+    margin: 1.5rem 0 0;
+    padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 4px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Efeito de hover no botão */
 .modal-content button:hover {
-    background-color: var(--fourth-color);
+    background-color: var(--fourth-color); /* Cor de hover */
+    transform: translateY(-3px); /* Levanta o botão um pouco */
+}
+
+/* Efeito de foco no botão */
+.modal-content button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Efeito de borda azul ao focar */
+}
+
+/* Animação para a entrada do modal */
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
