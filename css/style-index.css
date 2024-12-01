@@ -2,6 +2,7 @@
 :root {
     --primary-color: #17580E; /* Cor principal, usada no cabeçalho e botões */
     --secondary-color: #17580E; /* Cor secundária, usada no fundo dos botões */
+    --terciary-color: #9EE051;
     --background-color: #f4f4f4; /* Cor de fundo principal */
     --text-color: #333; /* Cor do texto */
     --button-hover: #207B14; /* Cor de fundo do botão ao passar o mouse */
@@ -68,6 +69,7 @@ ul.menu li a {
 
 ul.menu li a:hover {
     text-decoration: underline; /* Sublinha o link ao passar o mouse */
+    color: var(--terciary-color);
 }
 
 /* Botão de menu (menu-toggle) */
