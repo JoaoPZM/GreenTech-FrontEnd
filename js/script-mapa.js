@@ -30,7 +30,7 @@ const pontosDeColeta = [
         nome: 'UFSM',
         empresa: 'Universidade Federal de Santa Maria',
         tipoResiduo: 'Eletrônico',
-        diasDescarte: 'Segunda a Sexta',
+        diasDescarte: 'Dias Úteis',
         link: 'https://www.ufsm.br/unidades-universitarias/cachoeira-do-sul'
     },
     {
@@ -54,32 +54,32 @@ const pontosDeColeta = [
         nome: 'Lojas Certel',
         empresa: 'Reciclus',
         tipoResiduo: 'Lâmpadas fluorescentes',
-        diasDescarte: 'Todos os dias',
-        link: 'https://reciclus.org.br/'
+        diasDescarte: 'Dias Úteis',
+        link: 'http://www.lojascertel.com.br/'
     },
     {
         coordenadas: [-30.04119124815254, -52.897687531752936],
         nome: 'Imec Supermercados',
         empresa: 'Reciclus',
         tipoResiduo: 'Lâmpadas Fluorescentes e Pilhas',
-        diasDescarte: 'Todos os dias',
-        link: 'https://reciclus.org.br/'
+        diasDescarte: 'Dias Úteis',
+        link: 'https://www.superimec.com.br/'
     },
     {
         coordenadas: [-30.043275602973896, -52.895866547097896],
         nome: 'SINDILOJAS',
         empresa: 'Reciclus',
         tipoResiduo: 'Lâmpadas Fluorescentes',
-        diasDescarte: 'Todos os dias',
-        link: 'https://reciclus.org.br/'
+        diasDescarte: 'Dias Úteis',
+        link: 'http://www.sindilojas.com.br/'
     },
     {
         coordenadas: [-30.024262393426852, -52.90856846109955],
         nome: 'Desco Super&Atacado',
         empresa: 'Reciclus',
         tipoResiduo: 'Lâmpadas Fluorescentes',
-        diasDescarte: 'Todos os dias',
-        link: 'https://reciclus.org.br/'
+        diasDescarte: 'Dias Úteis',
+        link: 'https://www.desco.com.br/'
     },
     {
         coordenadas: [-30.037322903967507, -52.89850320477071],
