@@ -160,6 +160,8 @@ ul.menu li a:hover {
     padding: 1rem; /* Espaçamento interno */
     border-radius: 0.25rem; /* Bordas arredondadas nos links */
     transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado */
+
 }
 
 .sidebar ul li a:hover {
